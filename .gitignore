@@ -1,0 +1,5 @@
+.idea
+tests/log/debug
+vendor
+tests/data/claypit/c3tmp'
+composer.lock
