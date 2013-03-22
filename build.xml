@@ -1,14 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="FooBar" default="help">
+<project name="App" default="help">
 
     <target name="help">
         <echo msg="Help file"/>
         <echo msg="${project.basedir}"/>
+        <echo msg="${os.name}"/>
     </target>
 
-    <target name="init">
-        <exec command="php ./tools/composer.phar install --dev" logoutput="true"/>
+    <target name="composer-dev">
+        <exec command="php ./tools/composer.phar update" passthru="true"/>
+        <exec command="php ./tools/composer.phar install --dev" passthru="true"/>
+    </target>
+
+    <target name="builddev" depends="composer-dev">
+        <echo msg="Building development..."/>
+    </target>
+
+
+    <target name="phpunit">
+        <exec command="${project.basedir}/vendor/bin/phpunit.bat" passthru="true" os="WINNT"/>
+        <exec command="${project.basedir}/vendor/bin/phpunit" passthru="true" os="UNIX"/>
     </target>
 
 </project>
