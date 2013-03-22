@@ -1,0 +1,14 @@
+{
+    "name": "akentner/project-seed-php",
+    "description": "description_text",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Alexander Kentner",
+            "email": "github@akentner.de"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    }
+}
