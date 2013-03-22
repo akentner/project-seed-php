@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="FooBar" default="help">
+
+    <target name="help">
+        <echo msg="Help file"/>
+        <echo msg="${project.basedir}"/>
+    </target>
+
+    <target name="init">
+        <exec command="php ./tools/composer.phar install --dev" logoutput="true"/>
+    </target>
+
+</project>
